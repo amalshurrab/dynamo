@@ -69,6 +69,10 @@ chat message.
 
 ## 6. Hand-offs inside the team
 
+- The team is called as one unit through its lead, **dynamo**: intake → programme table → waves of specialists in
+  parallel → approval gates → one consolidated result (`dynamo-run` skill). A specialist may still be run alone for a
+  narrow ask, but never before intake.
+
 - Work flows in this order by default: mukhattit (strategy) → wassam → naqqash → (rawi ∥ lawwan) → nashir ∥ mulin,
   with safeer running outreach alongside, and muharrir → (bannaa ∥ maher) → mudaqqiq for the site; mudawwin records every
   stage and reports. Any agent can be run alone.

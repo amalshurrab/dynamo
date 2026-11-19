@@ -1,12 +1,12 @@
 #!/bin/zsh
 # Install the Dynamo agents and skills into a venture folder for Claude Code.
 # usage: scripts/install.sh /path/to/venture [agent ...]
-# With no agent names, installs all thirteen. Re-run to update; it overwrites only Dynamo files.
+# With no agent names, installs the lead and all thirteen. Re-run to update; it overwrites only Dynamo files.
 set -e
 HERE="$(cd "$(dirname "$0")/.." && pwd)"
 DEST="${1:?usage: install.sh /path/to/venture [agent ...]}"; shift || true
 mkdir -p "$DEST/.claude/agents" "$DEST/.claude/skills" "$DEST/marketing"
-if [[ $# -eq 0 ]]; then AGENTS=(mukhattit wassam naqqash lawwan rawi muharrir bannaa maher mudaqqiq nashir mulin safeer mudawwin); else AGENTS=("$@"); fi
+if [[ $# -eq 0 ]]; then AGENTS=(dynamo mukhattit wassam naqqash lawwan rawi muharrir bannaa maher mudaqqiq nashir mulin safeer mudawwin); else AGENTS=("$@"); fi
 for a in "${AGENTS[@]}"; do
   [[ -f "$HERE/agents/$a.md" ]] || { echo "no such agent: $a"; exit 1; }
   cp "$HERE/agents/$a.md" "$DEST/.claude/agents/$a.md"

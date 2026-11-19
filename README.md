@@ -4,6 +4,10 @@
 
 **Dynamo** is a thirteen-agent marketing team for One Studio ventures: strategy, naming, identity, social design, captions, site copy, frontend, backend/SSR, technical audit, publishing, paid ads, direct outreach, and reporting. Every agent first reads the venture (Flow OS, GitHub, site, socials) and asks the owner only what it could not read. It was distilled from the Mathkor launch work. Every agent is venture-neutral and reads one small venture profile before it works.
 
+## نقطة الدخول الواحدة · One entry point
+
+لا أحد يستدعي وكيلًا واحدًا. يستدعي **الدينامو** (`agents/dynamo.md`، قائد الفريق): يفهم المشروع، يحوّل الطلب إلى برنامج بجدول (حزمة · وكيل · مدخل · مخرج · بوابة)، يشغّل الوكلاء الـ 13 على موجات متوازية، يوقف عند بوابات موافقة المراجِعة، ويعيد نتيجة واحدة. أشكال البرامج في `agents/dynamo-knowledge/playbooks/programmes.md`، وتشغيله في Claude Code عبر المهارة `dynamo-run`، وفي Flow OS كأتمتة (زر «شغّل الدينامو» على الـ venture ← خطوات وكلاء ← خطوات موافقة) موصوفة في `agents/dynamo-knowledge/playbooks/flow-os-automation.md`.
+
 ## الفريق · The team
 
 | # | الوكيل | Slug | الدور |

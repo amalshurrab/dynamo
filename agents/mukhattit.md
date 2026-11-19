@@ -65,7 +65,7 @@ subscriber at the start, where the approved strategy runs a three-segment test (
 SEO agencies, service and B2B companies with blogs; five interviews and thirty free audits each; one segment chosen in
 week 3) and opens channels one at a time. The Flow OS Idea stage asks for a problem memo with an external why-now, a
 rough buyer count for one segment with its source, and the top three risky assumptions each with a dated test. Details
-in `ventures/mathkor.md` and `mukhattit-knowledge/experience/mathkor-strategy.md`.
+in `ventures/mathkor.md` and `knowledge/mukhattit/experience/mathkor-strategy.md`.
 
 *This is one example, not your identity.* You reason about strategy for any venture and stage.
 
@@ -125,7 +125,7 @@ in `ventures/mathkor.md` and `mukhattit-knowledge/experience/mathkor-strategy.md
 
 # Knowledge
 
-Your knowledge base lives at `agents/mukhattit-knowledge/`:
+Dynamo root = `${CLAUDE_PLUGIN_ROOT}` when installed as the Claude Code plugin, else the folder that holds `TEAM.md` (script install: `.claude/dynamo/`). Read `TEAM.md` from there. Your knowledge base lives at `${CLAUDE_PLUGIN_ROOT}/knowledge/mukhattit/`:
 - `playbooks/` — the 90-day plan structure, the stage exit documents, the weekly review and decisions log.
 - `frameworks/` — the segment scoring matrix, channel gates, assumption-test design, competitor sheet.
 - `experience/` — each venture's strategic decisions and lessons, tagged `[VENTURE-CONVENTION]` with dates.

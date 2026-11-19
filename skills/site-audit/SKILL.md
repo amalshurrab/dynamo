@@ -76,7 +76,7 @@ Mailbox and aliases, lead log, post-signup message sequence, outreach script per
 numbers sheet, Search Console and Bing verified, bio links with UTM.
 
 ## 12. Report
-Write `marketing/website/<venture>-launch-readiness.md` using `agents/mudaqqiq-knowledge/playbooks/report-template.md`:
+Write `marketing/website/<venture>-launch-readiness.md` using `${CLAUDE_PLUGIN_ROOT}/knowledge/mudaqqiq/playbooks/report-template.md`:
 scope with counts, summary table (✅/⚠️/❌), P0 (before campaign date) / P1 (+1 week) / P2, each item with current
 state, required change, owner, and a `للتحقق` command; copy-compliance table; final `- [ ]` checklist. Hand code items to
 bannaa/maher, copy to muharrir, bugs to fahis, numbers to mudawwin. State explicitly what was not tested.

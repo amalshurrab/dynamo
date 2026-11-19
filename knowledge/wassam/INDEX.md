@@ -19,7 +19,7 @@ Manifest of what `wassam` knows. Every file carries a `Source:` line; venture-sp
 and is tagged `[VENTURE-CONVENTION]` with a date. Registry facts carry the date they were checked.
 
 ```
-wassam-knowledge/
+knowledge/wassam/
 ├── playbooks/    → check order, registry procedures (RDAP, whois, WIPO, SAIP), round table format
 ├── frameworks/   → Arabic naming patterns, transliteration rules and traps
 └── experience/   → naming histories per venture (Mathkor 2026-11)

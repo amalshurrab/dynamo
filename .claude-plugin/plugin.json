@@ -1,0 +1,10 @@
+{
+  "name": "dynamo",
+  "displayName": "الدينامو · Dynamo marketing team",
+  "description": "One Studio's 13-agent marketing team for any venture, called as one unit through the dynamo lead: strategy, naming, identity, social design, captions, site copy, frontend, backend/SSR, launch audit, publishing, paid ads, outreach and reporting, with human approval gates. Arabic-first, MENA.",
+  "author": { "name": "Amal Shurrab · One Studio", "url": "https://github.com/amalshurrab" },
+  "homepage": "https://github.com/amalshurrab/dynamo",
+  "repository": "https://github.com/amalshurrab/dynamo",
+  "license": "UNLICENSED",
+  "keywords": ["marketing", "agents", "arabic", "one-studio", "flow-os", "social-media", "seo", "geo"]
+}

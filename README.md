@@ -6,7 +6,7 @@
 
 ## نقطة الدخول الواحدة · One entry point
 
-لا أحد يستدعي وكيلًا واحدًا. يستدعي **الدينامو** (`agents/dynamo.md`، قائد الفريق): يفهم المشروع، يحوّل الطلب إلى برنامج بجدول (حزمة · وكيل · مدخل · مخرج · بوابة)، يشغّل الوكلاء الـ 13 على موجات متوازية، يوقف عند بوابات موافقة المراجِعة، ويعيد نتيجة واحدة. أشكال البرامج في `agents/dynamo-knowledge/playbooks/programmes.md`، وتشغيله في Claude Code عبر المهارة `dynamo-run`، وفي Flow OS كأتمتة (زر «شغّل الدينامو» على الـ venture ← خطوات وكلاء ← خطوات موافقة) موصوفة في `agents/dynamo-knowledge/playbooks/flow-os-automation.md`.
+لا أحد يستدعي وكيلًا واحدًا. يستدعي **الدينامو** (`agents/dynamo.md`، قائد الفريق): يفهم المشروع، يحوّل الطلب إلى برنامج بجدول (حزمة · وكيل · مدخل · مخرج · بوابة)، يشغّل الوكلاء الـ 13 على موجات متوازية، يوقف عند بوابات موافقة المراجِعة، ويعيد نتيجة واحدة. أشكال البرامج في `knowledge/dynamo/playbooks/programmes.md`، وتشغيله في Claude Code عبر المهارة `dynamo-run`، وفي Flow OS كأتمتة (زر «شغّل الدينامو» على الـ venture ← خطوات وكلاء ← خطوات موافقة) موصوفة في `knowledge/dynamo/playbooks/flow-os-automation.md`.
 
 ## الفريق · The team
 
@@ -38,10 +38,30 @@
 
 ## كيف تستدعيه من Claude · Calling the team from Claude
 
-**من Claude Code داخل مجلد مشروعك** (الطريقة الكاملة اليوم):
-1. مرة واحدة: `scripts/install.sh /path/to/your/venture` (ينسخ الوكلاء والمهارات إلى `.claude/`).
-2. مرة واحدة: اربط Flow OS في Claude Code (`/venture-link` في المستودع) حتى يقرأ الفريق مشروعك من Flow OS. بدونه يشتغل الفريق من المستودع والموقع وما تكتبه له.
-3. ثم في أي جلسة: `/dynamo بدي أطلق منتجي خلال أسبوعين` أو ببساطة «شغّل الدينامو على مشروعي». القائد يفهم ويخطّط ويوزّع ويرجع بنتيجة واحدة، ويسألك عند كل بوابة.
+**من Claude Code، كـ plugin (الطريقة الموصى بها لكل فريق One Studio):** أمر واحد، مرة واحدة، على أي جهاز، ويعمل في كل مشاريعك:
+
+```bash
+claude plugin install dynamo --marketplace amalshurrab/dynamo
+```
+
+أو من داخل جلسة Claude Code: `/plugin marketplace add amalshurrab/dynamo` ثم `/plugin install dynamo@dynamo`.
+بعدها افتح **جلسة جديدة** (الـ plugins تُحمَّل عند بدء الجلسة) واكتب:
+
+```
+/dynamo:dynamo بدي أطلق منتجي خلال أسبوعين
+```
+
+أو ببساطة «شغّل الدينامو على مشروعي». القائد يفهم ويخطّط ويوزّع ويرجع بنتيجة واحدة، ويسألك عند كل بوابة. الوكلاء يظهرون باسم `dynamo:<slug>` والمهارات باسم `/dynamo:<skill>`.
+
+- **التحديث:** `claude plugin update dynamo@dynamo` (كل commit على `main` هو إصدار جديد؛ لا يلزم رقم نسخة). ثم `/reload-plugins` أو جلسة جديدة.
+- **لمستودع فريق** (حتى يُفعَّل تلقائيًا لكل من يفتحه): أضف إلى `.claude/settings.json` في المستودع:
+  ```json
+  { "extraKnownMarketplaces": { "dynamo": { "source": { "source": "github", "repo": "amalshurrab/dynamo" } } },
+    "enabledPlugins": { "dynamo@dynamo": true } }
+  ```
+  وكل عضو يشغّل مرة واحدة `claude plugin install dynamo@dynamo --scope project`.
+- **ربط Flow OS** (اختياري): اربط MCP الستوديو في Claude Code حتى يقرأ الفريق مشروعك من Flow OS. بدونه يشتغل الفريق من المستودع والموقع وما تكتبه له.
+- **بديل بلا plugin:** `git clone https://github.com/amalshurrab/dynamo.git` ثم `dynamo/scripts/install.sh /path/to/venture` (ينسخ الوكلاء إلى `.claude/agents/`، المهارات إلى `.claude/skills/`، والمعرفة وقواعد الفريق إلى `.claude/dynamo/`). الأمر يصير `/dynamo` بلا بادئة. أعد تشغيله للتحديث.
 
 **من Flow OS** (بعد الترقية لـ«حيّ»): اكتب `@dynamo` في شات مذكور أو في شات خاص معه. لا تحتاج مفتاح Claude؛ الوكلاء يعملون على حساب Flow OS. يلزم أن تكون عضوًا داخليًا في Flow OS وعضوًا في الـ venture.
 
@@ -50,26 +70,28 @@
 ## كيف يستخدمه أي venture · How a venture uses it
 
 1. **ملف هوية وقواعد المشروع.** انسخي [`venture-profile.template.md`](venture-profile.template.md) إلى مستودع الـ venture باسم `marketing/venture-profile.md` واملئيه. مثال مكتمل: [`ventures/mathkor.md`](ventures/mathkor.md). كل وكيل يقرأه قبل أي عمل.
-2. **داخل Claude Code (الطريقة الأسرع).** من مجلد الـ venture:
-   ```bash
-   /path/to/dynamo/scripts/install.sh /path/to/venture
-   ```
-   ينسخ الوكلاء إلى `.claude/agents/` والمهارات إلى `.claude/skills/`. بعدها: «شغّلي لوّان على خطة الشهر» أو `Agent(subagent_type=lawwan)`.
+2. **داخل Claude Code.** ثبّت الـ plugin كما في القسم السابق (أو `scripts/install.sh` كبديل). بعدها: «شغّلي لوّان على خطة الشهر» أو `Agent(subagent_type="dynamo:lawwan")`.
 3. **داخل Flow OS.** `discover_agent_repo` على هذا المستودع، ثم `import_agents_from_repo` للوكلاء المطلوبين، ثم `attach_imported_agent_to_venture`. يظهرون على كرت الطاقم موقوفين إلى أن يُشغَّلوا. التحديثات اللاحقة عبر `check_agent_import_updates` ثم `adopt_agents_from_repo`.
 
 ## بنية المستودع · Layout
 
 ```
 dynamo/
-├── README.md · TEAM.md · dynamo-agents-v1.md
+├── .claude-plugin/plugin.json       ← بيان الـ plugin
+├── .claude-plugin/marketplace.json  ← الـ marketplace (نفس المستودع، source "./")
+├── README.md · TEAM.md · dynamo-agents-v2.md
 ├── venture-profile.template.md      ← ما يملؤه كل venture
 ├── ventures/mathkor.md              ← المثال المرجعي المكتمل
-├── agents/<slug>.md                 ← تعريف كل وكيل (frontmatter متوافق مع Flow OS)
-├── agents/<slug>-knowledge/         ← INDEX.md + playbooks/ + experience/ + frameworks/
+├── agents/<slug>.md                 ← تعريف كل وكيل فقط (frontmatter متوافق مع Flow OS)
+├── knowledge/<slug>/                ← INDEX.md + playbooks/ + experience/ + frameworks/
 ├── examples/<slug>-starter-prompts.yaml
 ├── skills/<skill>/SKILL.md          ← مهارات مشتركة (render, publish, audit, report…)
-└── scripts/install.sh
+├── characters/                      ← الأفاتارات وصفحة الفريق
+├── app/                             ← مصدر صفحة claude.ai
+└── scripts/install.sh               ← البديل بلا plugin
 ```
+
+> `agents/` يحوي ملفات الوكلاء فقط: Claude Code يقرأ هذا المجلد كله (بما فيه المجلدات الفرعية) كوكلاء، لذلك المعرفة في `knowledge/` والوكلاء يشيرون لها عبر `${CLAUDE_PLUGIN_ROOT}/knowledge/<slug>/`.
 
 ## الشخصيات · Characters
 
@@ -77,10 +99,10 @@ dynamo/
 
 ## ملاحظة الاستيراد إلى Flow OS
 
-`discover_agent_repo` يحتاج أن يقرأ المستودع. وهو اليوم **خاص** تحت `amalshurrab/dynamo`، فالقراءة ترفض (`no_access`). الحلول: جعله عامًا، أو تثبيت تطبيق GitHub الخاص بالستوديو على الحساب، أو نقله إلى `onestudio-co`. قرار المالكة.
+المستودع **عام** منذ 2026-11-19، و`discover_agent_repo` يقرأه (14 وكيلًا، 15 مهارة). Flow OS يقرأ `agents/*.md` و`skills/*/SKILL.md` فقط، فنقل المعرفة إلى `knowledge/` لا يؤثر عليه.
 
 ## قواعد الملكية · Ownership
 
 - المالكة والمراجِعة: Amal Shurrab. أي تعديل على وكيل يمرّ من هنا ثم يُزامَن إلى Flow OS.
-- ما يتعلمه الفريق في venture يُسجَّل في `agents/<slug>-knowledge/experience/` موسومًا `[VENTURE-CONVENTION]` مع التاريخ، ولا يُدمج في النواة إلا إذا ثبت أنه عام.
+- ما يتعلمه الفريق في venture يُسجَّل في `knowledge/<slug>/experience/` موسومًا `[VENTURE-CONVENTION]` مع التاريخ، ولا يُدمج في النواة إلا إذا ثبت أنه عام.
 - الأسماء العشرة قابلة للمراجعة. الـ slug ثابت حتى تُقرَّر الأسماء النهائية.

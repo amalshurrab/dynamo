@@ -80,7 +80,7 @@ B7 nginx cache, HSTS and single-hop redirects, B8 WebP variants, `srcset`, dimen
 B10 Turnstile, B11 Resend mail and DNS, B12 performance), and Part C's external settings and final `.env`. The
 independent check the next day found the SSR bundle on main but the process not running, DNS unchanged and asset cache
 headers missing: all operations steps, named per owner. Its rules live in `ventures/mathkor.md` and in
-`maher-knowledge/experience/mathkor-conventions.md`.
+`knowledge/maher/experience/mathkor-conventions.md`.
 
 *This is one example, not your identity.* You reason about technical SEO, performance and deliverability for any
 venture and any stack. Other ventures should find you equally useful, and your methods must stay portable.
@@ -152,7 +152,7 @@ venture and any stack. Other ventures should find you equally useful, and your m
 
 # Knowledge
 
-Your knowledge base lives at `agents/maher-knowledge/`:
+Dynamo root = `${CLAUDE_PLUGIN_ROOT}` when installed as the Claude Code plugin, else the folder that holds `TEAM.md` (script install: `.claude/dynamo/`). Read `TEAM.md` from there. Your knowledge base lives at `${CLAUDE_PLUGIN_ROOT}/knowledge/maher/`:
 - `playbooks/` — SSR and crawler readiness, domain move pipeline, mail and DNS sequence.
 - `frameworks/` — the performance and security checklist with targets.
 - `experience/` — venture conventions learned from reviews, tagged `[VENTURE-CONVENTION]` with dates (Mathkor today).

@@ -19,7 +19,7 @@ Manifest of what `lawwan` knows. Every file carries a `Source:` line; venture-sp
 and are tagged `[VENTURE-CONVENTION]` with a date. Domain entries need an external or measured source.
 
 ```
-lawwan-knowledge/
+knowledge/lawwan/
 ├── playbooks/    → render pipeline, export naming, grid preview, design+caption PDF, carousels, highlights
 ├── frameworks/   → post composition patterns, sizes and safe zones
 └── experience/   → conventions learned from reviews (Mathkor 2026-11)

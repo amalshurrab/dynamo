@@ -12,6 +12,6 @@ seed_counts:
 # Dynamo (team lead) — Knowledge Base Index
 
 ```
-dynamo-knowledge/
+knowledge/dynamo/
 └── playbooks/   → programme shapes (waves, specialists, gates) and the Flow OS automation design
 ```

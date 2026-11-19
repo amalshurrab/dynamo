@@ -19,7 +19,7 @@ Manifest of what `muharrir` knows. Every file carries a `Source:` line; venture-
 and are tagged `[VENTURE-CONVENTION]` with a date. Domain entries need an external or measured source.
 
 ```
-muharrir-knowledge/
+knowledge/muharrir/
 ├── playbooks/    → numbered copy file + live audit method; legal page set (AR/EN, Saudi law)
 ├── frameworks/   → GEO/AEO page structure, blog review checklist
 └── experience/   → conventions learned from reviews (Mathkor 2026-11)

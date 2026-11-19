@@ -9,7 +9,7 @@ description: Run the whole Dynamo marketing team on a venture as one programme: 
 Run `venture-intake`. Output: `marketing/venture-profile.md`, confirmed by the owner (≤5 pre-filled questions).
 
 ## 2. Programme
-Pick a shape from `agents/dynamo-knowledge/playbooks/programmes.md` (Launch from zero · Content month · Site readiness ·
+Pick a shape from `${CLAUDE_PLUGIN_ROOT}/knowledge/dynamo/playbooks/programmes.md` (Launch from zero · Content month · Site readiness ·
 Segment discovery · Paid push · Custom). Produce ONE table: package · specialist · input · output · gate. Ask for a yes.
 
 ## 3. Waves
@@ -31,6 +31,6 @@ Wait for answers. Record every correction in the profile's "Rules learned".
 decisions taken, open items, next programme.
 
 ## Flow OS
-The same steps as an automation graph: see `agents/dynamo-knowledge/playbooks/flow-os-automation.md`. Agent steps need the
+The same steps as an automation graph: see `${CLAUDE_PLUGIN_ROOT}/knowledge/dynamo/playbooks/flow-os-automation.md`. Agent steps need the
 Dynamo agents live in Flow OS; approval steps replace the chat gates; a manual trigger is the venture's "call the team"
 button.

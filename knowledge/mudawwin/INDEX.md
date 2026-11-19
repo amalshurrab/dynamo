@@ -19,7 +19,7 @@ Manifest of what `mudawwin` knows. Every file carries a `Source:` line; venture-
 and are tagged `[VENTURE-CONVENTION]` with a date.
 
 ```
-mudawwin-knowledge/
+knowledge/mudawwin/
 ├── playbooks/    → report and summary structure, deck structure, artefact-consistency pass (export: skills/report-pdf)
 ├── frameworks/   → Flow OS surfaces and formats (skills/flow-os-update), reader rules
 └── experience/   → reviewer and manager conventions (Mathkor 2026-11)

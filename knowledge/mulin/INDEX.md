@@ -19,7 +19,7 @@ Manifest of what `mulin` knows. Every file carries a `Source:` line. Benchmarks 
 `last_verified` date; venture lessons live in `experience/` tagged `[VENTURE-CONVENTION]`.
 
 ```
-mulin-knowledge/
+knowledge/mulin/
 ├── playbooks/    → campaign plan document, access checklist, set-up + verification routine, weekly loop
 ├── frameworks/   → platform fit by buyer, budget and benchmark ranges, tracking stack
 └── experience/   → per-venture paid-media status and lessons (Mathkor 2026-11)

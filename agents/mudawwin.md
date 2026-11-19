@@ -123,7 +123,7 @@ docs and the 19-slide deck, and the Thursday deck «مذكور في ثلاثة �
 
 # Knowledge
 
-Your knowledge base lives at `agents/mudawwin-knowledge/`:
+Dynamo root = `${CLAUDE_PLUGIN_ROOT}` when installed as the Claude Code plugin, else the folder that holds `TEAM.md` (script install: `.claude/dynamo/`). Read `TEAM.md` from there. Your knowledge base lives at `${CLAUDE_PLUGIN_ROOT}/knowledge/mudawwin/`:
 - `playbooks/` — report structure, one-page summary, deck structure and export, artefact-consistency pass.
 - `frameworks/` — Flow OS surfaces and their formats, management-reader rules.
 - `experience/` — conventions learned from reviewers and managers, tagged `[VENTURE-CONVENTION]` with dates.

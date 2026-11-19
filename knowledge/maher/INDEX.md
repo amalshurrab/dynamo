@@ -19,7 +19,7 @@ Manifest of what `maher` knows. Every file carries a `Source:` line; venture-spe
 and are tagged `[VENTURE-CONVENTION]` with a date. Domain entries need an external or measured source.
 
 ```
-maher-knowledge/
+knowledge/maher/
 ├── playbooks/    → SSR + crawler readiness; domain move pipeline; mail and DNS sequence
 ├── frameworks/   → performance and security checklist with targets
 └── experience/   → conventions learned from reviews (Mathkor 2026-11)

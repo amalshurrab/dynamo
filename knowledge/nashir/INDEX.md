@@ -19,7 +19,7 @@ Manifest of what `nashir` knows. Every file carries a `Source:` line; venture-sp
 and are tagged `[VENTURE-CONVENTION]` with a date.
 
 ```
-nashir-knowledge/
+knowledge/nashir/
 ├── playbooks/    → verification routine and publish-day checklist (procedures live in skills/publish-schedule)
 ├── frameworks/   → platform renditions, limits, offsets, queue table schema
 └── experience/   → platform behaviour learned per venture (Mathkor 2026-11)

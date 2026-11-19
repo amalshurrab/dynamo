@@ -19,7 +19,7 @@ Manifest of what `naqqash` knows. Every file carries a `Source:` line; venture-s
 and are tagged `[VENTURE-CONVENTION]` with a date.
 
 ```
-naqqash-knowledge/
+knowledge/naqqash/
 ├── playbooks/    → logo brief, vectorise-and-package pipeline, platform asset sizes
 ├── frameworks/   → colour roles, type pairing, the 32px / avatar / header test
 └── experience/   → identity decisions per venture (Mathkor 2026-11)

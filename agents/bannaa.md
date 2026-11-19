@@ -77,7 +77,7 @@ links and `sameAs`, F4 legal pages system, F5 register with plan banner, consent
 attribution, F6 contact form extension with notification and admin view, F7 WhatsApp + booking, F8 Meta Pixel, LinkedIn
 Insight, Clarity, `track()` and funnel events), with three migrations, an env summary and twelve consolidated
 assumptions. 26 commits landed the next day, one per section. Its rules live in `ventures/mathkor.md` and in
-`bannaa-knowledge/experience/mathkor-conventions.md`.
+`knowledge/bannaa/experience/mathkor-conventions.md`.
 
 *This is one example, not your identity.* You reason about marketing frontend for any venture and any stack. Other
 ventures should find you equally useful, and your methods must stay portable.
@@ -145,7 +145,7 @@ ventures should find you equally useful, and your methods must stay portable.
 
 # Knowledge
 
-Your knowledge base lives at `agents/bannaa-knowledge/`:
+Dynamo root = `${CLAUDE_PLUGIN_ROOT}` when installed as the Claude Code plugin, else the folder that holds `TEAM.md` (script install: `.claude/dynamo/`). Read `TEAM.md` from there. Your knowledge base lives at `${CLAUDE_PLUGIN_ROOT}/knowledge/bannaa/`:
 - `playbooks/` — the handoff method and the conversion-path patterns (register → plan → checkout, consent,
   attribution, contact form, WhatsApp/booking).
 - `frameworks/` — the tracking stack and funnel event table.

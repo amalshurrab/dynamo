@@ -19,7 +19,7 @@ Manifest of what `mukhattit` knows. Every file carries a `Source:` line; venture
 `[VENTURE-CONVENTION]` with dates.
 
 ```
-mukhattit-knowledge/
+knowledge/mukhattit/
 ├── playbooks/    → 90-day plan structure, stage exit documents, weekly review and decisions log
 ├── frameworks/   → segment scoring matrix, channel gates, assumption tests, competitor sheet
 └── experience/   → per-venture strategy decisions (Mathkor 2026-11)

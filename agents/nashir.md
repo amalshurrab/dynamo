@@ -125,7 +125,7 @@ highlights, and re-created 23 LinkedIn posts at 1080×1350 after the landscape r
 
 # Knowledge
 
-Your knowledge base lives at `agents/nashir-knowledge/`:
+Dynamo root = `${CLAUDE_PLUGIN_ROOT}` when installed as the Claude Code plugin, else the folder that holds `TEAM.md` (script install: `.claude/dynamo/`). Read `TEAM.md` from there. Your knowledge base lives at `${CLAUDE_PLUGIN_ROOT}/knowledge/nashir/`:
 - `playbooks/` — the Business Suite and LinkedIn procedures, the browser upload method, the verification routine.
 - `frameworks/` — platform renditions and limits, time-zone and offset rules, the queue table schema.
 - `experience/` — platform behaviour and conventions learned per venture, tagged `[VENTURE-CONVENTION]` with dates.

@@ -19,7 +19,7 @@ Manifest of what `safeer` knows. Every file carries a `Source:` line; venture le
 `[VENTURE-CONVENTION]` with dates.
 
 ```
-safeer-knowledge/
+knowledge/safeer/
 ├── playbooks/    → list building, message ladder and daily plan, interview and free-audit flows, weekly report
 ├── frameworks/   → pipeline stages and metrics, compliance and platform limits, reply-earning message patterns
 └── experience/   → per-venture outreach lessons (Mathkor 2026-11)

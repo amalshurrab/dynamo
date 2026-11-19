@@ -136,7 +136,7 @@ old-domain leftovers, Search Console, tracking, SSR) fed the developer handoff.
 
 # Knowledge
 
-Your knowledge base lives at `agents/mudaqqiq-knowledge/`:
+Dynamo root = `${CLAUDE_PLUGIN_ROOT}` when installed as the Claude Code plugin, else the folder that holds `TEAM.md` (script install: `.claude/dynamo/`). Read `TEAM.md` from there. Your knowledge base lives at `${CLAUDE_PLUGIN_ROOT}/knowledge/mudaqqiq/`:
 - `playbooks/` — the audit procedure, the report template, the verification command set.
 - `frameworks/` — priority rules (P0/P1/P2), AI-crawler visibility facts, deliverability and legal-page requirements.
 - `experience/` — venture conventions and findings patterns learned from audits, tagged `[VENTURE-CONVENTION]` with dates.

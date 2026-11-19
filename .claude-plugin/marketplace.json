@@ -1,0 +1,14 @@
+{
+  "name": "dynamo",
+  "owner": { "name": "Amal Shurrab · One Studio", "url": "https://github.com/amalshurrab" },
+  "description": "الدينامو: One Studio's marketing agent team, installable in Claude Code with one command.",
+  "plugins": [
+    {
+      "name": "dynamo",
+      "source": "./",
+      "description": "The whole Dynamo marketing team (lead + 13 specialists, 15 skills, knowledge bases, characters). Call it with /dynamo:dynamo <what you want>.",
+      "category": "marketing",
+      "tags": ["marketing", "arabic", "agents", "one-studio"]
+    }
+  ]
+}

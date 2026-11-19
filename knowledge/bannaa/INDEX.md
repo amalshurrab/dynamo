@@ -19,7 +19,7 @@ Manifest of what `bannaa` knows. Every file carries a `Source:` line; venture-sp
 and are tagged `[VENTURE-CONVENTION]` with a date. Domain entries need an external or measured source.
 
 ```
-bannaa-knowledge/
+knowledge/bannaa/
 ├── playbooks/    → conversion-path patterns: register→plan→checkout, consent, attribution, contact, entry points
 ├── frameworks/   → tracking stack and funnel event table (GA4 · Meta · LinkedIn · Clarity)
 └── experience/   → conventions learned from reviews (Mathkor 2026-11)

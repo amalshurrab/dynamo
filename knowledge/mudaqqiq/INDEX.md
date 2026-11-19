@@ -19,7 +19,7 @@ Manifest of what `mudaqqiq` knows. Every file carries a `Source:` line; venture-
 and are tagged `[VENTURE-CONVENTION]` with a date. Domain entries need an external or measured source.
 
 ```
-mudaqqiq-knowledge/
+knowledge/mudaqqiq/
 ├── playbooks/    → report template and verification commands (the procedure itself is skills/site-audit)
 ├── frameworks/   → P0/P1/P2 rules, AI-crawler visibility, mail deliverability, legal-page requirements
 └── experience/   → findings patterns and conventions from audits (Mathkor 2026-11)

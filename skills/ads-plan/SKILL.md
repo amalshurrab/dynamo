@@ -20,7 +20,7 @@ Stop rule: <condition that pauses the campaign without waiting for the weekly ca
 Approval: owner <name> · date · amount SAR <total>   ← nothing launches without this line filled by the owner
 ```
 Platform mix guide: B2B decision makers → LinkedIn first, Google Search second; Saudi store owners → Meta first; consumer
-→ Meta/Snapchat/TikTok. X for awareness only. Ranges: see `mulin-knowledge/frameworks/platform-fit-and-benchmarks.md`.
+→ Meta/Snapchat/TikTok. X for awareness only. Ranges: see `${CLAUDE_PLUGIN_ROOT}/knowledge/mulin/frameworks/platform-fit-and-benchmarks.md`.
 
 ## 2. Access checklist (roles, never credentials)
 | Platform | Role for the reviewer | Also needed |

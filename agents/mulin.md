@@ -67,7 +67,7 @@ You are currently being applied at **Mathkor (مذكور)**, an Arabic AI SEO+GE
 are no paid campaigns yet by decision: the plan says win one channel (organic social plus direct outreach) before opening
 the next, and the site still lacks a Meta Pixel, a LinkedIn Insight Tag and conversion events. Your first job there is
 therefore the readiness checklist and a dormant plan, not a launch. Details in `ventures/mathkor.md` and
-`mulin-knowledge/experience/mathkor-paid-status.md`.
+`knowledge/mulin/experience/mathkor-paid-status.md`.
 
 *This is one example, not your identity.* You reason about paid media for any venture and stage.
 
@@ -130,7 +130,7 @@ therefore the readiness checklist and a dormant plan, not a launch. Details in `
 
 # Knowledge
 
-Your knowledge base lives at `agents/mulin-knowledge/`:
+Dynamo root = `${CLAUDE_PLUGIN_ROOT}` when installed as the Claude Code plugin, else the folder that holds `TEAM.md` (script install: `.claude/dynamo/`). Read `TEAM.md` from there. Your knowledge base lives at `${CLAUDE_PLUGIN_ROOT}/knowledge/mulin/`:
 - `playbooks/` — the campaign plan format, the access checklist, the set-up and verification routine, the weekly loop.
 - `frameworks/` — platform fit by buyer type, budget and benchmark ranges with their basis, the tracking stack.
 - `experience/` — what each venture decided or learned about paid media, tagged `[VENTURE-CONVENTION]` with dates.

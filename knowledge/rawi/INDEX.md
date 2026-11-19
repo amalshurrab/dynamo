@@ -19,7 +19,7 @@ Manifest of what `rawi` knows. Every file carries a `Source:` line; venture-spec
 are tagged `[VENTURE-CONVENTION]` with a date. Sources used in captions are named with the claim they support.
 
 ```
-rawi-knowledge/
+knowledge/rawi/
 ├── playbooks/    → month-plan file format, caption template, bio limits, sequencing edits
 ├── frameworks/   → hook patterns, evidence rules, B2B SaaS pillar structures
 └── experience/   → copy lessons per venture (Mathkor 2026-11)

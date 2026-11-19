@@ -1,0 +1,358 @@
+<title>الدينامو</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: a team wall of thirteen round portraits; a chat room with the character on one side and the conversation on the other. RTL first. */
+:root{
+  --bg:#F6F1E8; --paper:#FFFFFF; --ink:#2B2633; --muted:#6F6879; --line:#E6DFD3; --soft:#EFE8DC;
+  --accent:#FF5A1A; --accent-ink:#FFFFFF; --bubble-me:#2B2633; --bubble-me-ink:#F6F1E8; --bubble-ai:#FFFFFF;
+  --shadow:0 10px 30px rgba(43,38,51,.08);
+  --font-ar:"Cairo","Inter",system-ui,sans-serif; --font-en:"Inter","Cairo",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#1B1821; --paper:#262230; --ink:#F1EDE6; --muted:#A79FB0; --line:#3A3444; --soft:#2F2A3A;
+  --bubble-me:#F1EDE6; --bubble-me-ink:#1B1821; --bubble-ai:#262230; --shadow:0 10px 30px rgba(0,0,0,.35); color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#1B1821; --paper:#262230; --ink:#F1EDE6; --muted:#A79FB0; --line:#3A3444; --soft:#2F2A3A;
+  --bubble-me:#F1EDE6; --bubble-me-ink:#1B1821; --bubble-ai:#262230; --shadow:0 10px 30px rgba(0,0,0,.35); color-scheme:dark }
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-ar);direction:rtl;text-align:right;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+*{box-sizing:border-box}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+textarea,input{font:inherit;color:inherit}
+a{color:inherit}
+.en{font-family:var(--font-en);direction:ltr;unicode-bidi:isolate}
+[hidden]{display:none!important}
+
+/* top bar */
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:22px}
+.brand .dot{width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.brand small{font-family:var(--font-en);font-weight:500;font-size:12px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:7px 12px;background:var(--paper);font-weight:600;font-size:14px;max-width:48vw}
+.chip:hover{border-color:var(--accent)}
+.chip .lbl{color:var(--muted);font-weight:500}
+.chip .val{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* team wall */
+.hero{padding-block:34px 10px}
+.hero h1{margin:0;font-size:clamp(32px,5vw,52px);font-weight:900;line-height:1.1;text-wrap:balance}
+.hero p{margin:10px 0 0;color:var(--muted);font-size:16px;max-width:60ch;line-height:1.7}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:22px 16px;padding-block:22px 48px}
+.card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:10px 6px 14px;border-radius:20px;transition:transform .18s ease,background .18s ease}
+.card:hover,.card:focus-visible{background:var(--paper);transform:translateY(-3px);box-shadow:var(--shadow);outline:none}
+.card img{width:100%;max-width:150px;aspect-ratio:1;border-radius:50%;display:block}
+.card b{font-size:22px;font-weight:800;line-height:1.1}
+.card span{font-size:13px;color:var(--muted);font-weight:600;line-height:1.3}
+.card i{font-style:normal;font-size:12px;color:var(--accent);font-weight:700;opacity:0;transform:translateY(4px);transition:all .18s ease}
+.card:hover i,.card:focus-visible i{opacity:1;transform:none}
+
+/* chat room */
+.room{display:grid;grid-template-columns:300px minmax(0,1fr);gap:22px;padding-block:18px 0;height:calc(100% - 70px);min-height:520px}
+.side{display:flex;flex-direction:column;gap:14px;overflow:auto;padding-bottom:18px}
+.side .back{color:var(--muted);font-weight:600;font-size:14px;display:inline-flex;gap:6px;align-items:center;padding:4px 0}
+.side .back:hover{color:var(--accent)}
+.persona{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:18px;display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center}
+.persona img{width:160px;height:160px;border-radius:50%}
+.persona h2{margin:6px 0 0;font-size:28px;font-weight:900;line-height:1}
+.persona .role{color:var(--muted);font-weight:600;font-size:14px}
+.persona .line{font-size:15px;font-weight:700;color:var(--accent);line-height:1.5;margin-top:4px}
+.deliver{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:14px 16px}
+.deliver h3{margin:0 0 8px;font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.02em}
+.deliver ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+.deliver li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-left:8px;vertical-align:middle}
+.main{display:flex;flex-direction:column;min-width:0;background:var(--paper);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.thread{flex:1;overflow:auto;padding:22px 22px 10px;display:flex;flex-direction:column;gap:14px;scroll-behavior:smooth}
+.msg{max-width:min(78ch,92%);padding:12px 16px;border-radius:18px;line-height:1.75;font-size:15.5px;word-wrap:break-word;overflow-wrap:anywhere}
+.msg.me{align-self:flex-start;background:var(--bubble-me);color:var(--bubble-me-ink);border-bottom-right-radius:6px}
+.msg.ai{align-self:flex-end;background:var(--bubble-ai);border:1px solid var(--line);border-bottom-left-radius:6px}
+.msg.ai .who{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);font-weight:700;margin-bottom:6px}
+.msg.ai .who img{width:22px;height:22px;border-radius:50%}
+.msg p{margin:0 0 8px}.msg p:last-child{margin:0}
+.msg ul,.msg ol{margin:4px 0 8px;padding-right:20px}.msg li{margin:2px 0}
+.msg code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;background:var(--soft);padding:1px 5px;border-radius:5px;direction:ltr;unicode-bidi:isolate}
+.msg pre{background:var(--soft);padding:10px 12px;border-radius:10px;overflow:auto;direction:ltr;text-align:left}
+.msg h1,.msg h2,.msg h3{font-size:1.05em;margin:10px 0 4px}
+.msg table{border-collapse:collapse;font-size:.92em;display:block;overflow-x:auto}
+.msg td,.msg th{border:1px solid var(--line);padding:4px 8px}
+.thinking{color:var(--muted);font-size:14px;display:flex;gap:6px;align-items:center}
+.thinking::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{opacity:.2}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.thinking::after{animation:none}}
+.starters{display:flex;flex-wrap:wrap;gap:8px;padding:0 22px 12px}
+.starters button{border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:13.5px;font-weight:600;background:var(--bg)}
+.starters button:hover{border-color:var(--accent);color:var(--accent)}
+.composer{display:flex;gap:10px;align-items:flex-end;padding:12px 14px 14px;border-top:1px solid var(--line);background:var(--paper)}
+.composer textarea{flex:1;min-height:48px;max-height:200px;resize:none;border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:var(--bg);line-height:1.6}
+.composer textarea:focus{outline:2px solid var(--accent);outline-offset:0;border-color:transparent}
+.send,.stop{height:48px;padding:0 18px;border-radius:14px;font-weight:800;font-size:15px}
+.send{background:var(--accent);color:var(--accent-ink)}.send:disabled{opacity:.45;cursor:default}
+.stop{background:var(--soft)}
+.note{padding:10px 22px;font-size:13px;color:var(--muted)}
+.note.warn{color:var(--accent)}
+.sysnote{align-self:center;font-size:12.5px;color:var(--muted);background:var(--soft);padding:6px 12px;border-radius:999px}
+
+/* venture drawer */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:20}
+.drawer{position:fixed;top:0;bottom:0;left:0;width:min(520px,100%);background:var(--paper);z-index:21;display:flex;flex-direction:column;box-shadow:var(--shadow);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:16px;padding-block:0}
+.drawer header{display:flex;justify-content:space-between;align-items:center;padding-block:16px;border-bottom:1px solid var(--line)}
+.drawer header b{font-size:20px;font-weight:900}
+.drawer .body{flex:1;overflow:auto;padding-block:14px;display:flex;flex-direction:column;gap:14px}
+.vlist{display:flex;flex-wrap:wrap;gap:8px}
+.vlist button{border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-weight:700;font-size:14px}
+.vlist button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:13px;color:var(--muted);font-weight:700}
+.field input,.field textarea{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--bg)}
+.field textarea{min-height:220px;resize:vertical;line-height:1.6;font-size:14px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-weight:800;background:var(--bg)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:disabled{opacity:.5;cursor:default}
+.hint{font-size:12.5px;color:var(--muted);line-height:1.6}
+.foot{padding-block:18px 28px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line)}
+
+@media (max-width:820px){
+  .room{grid-template-columns:1fr;height:auto;min-height:0}
+  .side{flex-direction:row;align-items:stretch;overflow-x:auto}
+  .persona{min-width:230px;padding:12px}.persona img{width:84px;height:84px}.persona h2{font-size:22px}
+  .deliver{min-width:230px}
+  .main{min-height:60vh}
+  .chip{max-width:40vw}
+}
+</style>
+
+<div id="app">
+  <div class="bar">
+    <a class="brand" href="#team" id="brandLink"><span class="dot"></span>الدينامو <small>Dynamo</small></a>
+    <button class="chip" id="ventureChip" title="المشروع الذي يعمل عليه الفريق"><span class="lbl">المشروع</span><span class="val" id="ventureName">لم يُحدَّد بعد</span><span>▾</span></button>
+  </div>
+  <section id="viewTeam">
+    <div class="hero">
+      <h1>فريق تسويق كامل، ثلاثة عشر زميلًا، يعملون على مشروعك.</h1>
+      <p>اختر من تريد الكلام معه. كل واحد يقرأ ملف مشروعك أولًا، يسألك القليل، يعرض عليك خيارين، ثم ينفّذ. حدّد مشروعك من الزر في الأعلى حتى يعرفوك.</p>
+    </div>
+    <div class="wall" id="wall"></div>
+    <div class="foot"><span>الدينامو · فريق تسويق لمشاريع One Studio</span><span class="en">Dynamo · v1</span></div>
+  </section>
+  <section id="viewChat" hidden>
+    <div class="room">
+      <aside class="side">
+        <a class="back" href="#team">→ كل الفريق</a>
+        <div class="persona"><img id="pAvatar" alt=""><h2 id="pName"></h2><div class="role" id="pRole"></div><div class="line" id="pLine"></div></div>
+        <div class="deliver"><h3>ماذا يسلّم</h3><ul id="pDeliver"></ul></div>
+      </aside>
+      <div class="main">
+        <div class="note" id="roomNote" hidden></div>
+        <div class="thread" id="thread"></div>
+        <div class="starters" id="starters"></div>
+        <form class="composer" id="composer">
+          <textarea id="box" rows="1" placeholder="اكتب رسالتك…" aria-label="رسالتك"></textarea>
+          <button type="button" class="stop" id="stopBtn" hidden>إيقاف</button>
+          <button type="submit" class="send" id="sendBtn">إرسال</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="drawerWrap" hidden>
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" role="dialog" aria-label="المشروع">
+    <header><b>مشروعك</b><button class="btn" id="closeDrawer">إغلاق</button></header>
+    <div class="body">
+      <div class="hint">كل ما يعرفه الفريق عن مشروعك يأتي من هنا. اختر مشروعًا محفوظًا أو أنشئ واحدًا. لا تكتب كلمات مرور أو مفاتيح.</div>
+      <div class="vlist" id="vlist"></div>
+      <div class="field"><label for="vName">اسم المشروع</label><input id="vName" placeholder="مثال: مذكور"></div>
+      <div class="field"><label for="vSlug">معرّف قصير (لاتيني)</label><input id="vSlug" class="en" placeholder="mathkor" dir="ltr"></div>
+      <div class="row">
+        <button class="btn" id="readFlow" hidden>اقرأ من Flow OS</button>
+        <span class="hint" id="flowHint"></span>
+      </div>
+      <div class="field"><label for="vProfile">ملف المشروع (هوية، وعد، شريحة، قنوات، نبرة، ممنوعات، منافسون، الموقع، أي شيء يفيد)</label>
+        <textarea id="vProfile" placeholder="اكتب ما تعرفه بأي ترتيب. الفريق سيرتّبه ويسألك عمّا ينقص."></textarea></div>
+      <div class="row">
+        <button class="btn primary" id="saveVenture">حفظ واختيار</button>
+        <button class="btn" id="newVenture">مشروع جديد</button>
+        <span class="hint" id="saveHint"></span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<script>
+(async function(){
+const claude=window.claude||{use:async()=>null};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let AGENTS=[], TEAM='', AGENT_MD={};
+try{ AGENTS=await (await fetch('agents.json')).json(); }catch(e){ AGENTS=[]; }
+try{ TEAM=await (await fetch('team-rules.md')).text(); }catch(e){ TEAM=''; }
+
+// ---------- team wall ----------
+const wall=$('#wall');
+wall.innerHTML=AGENTS.map(a=>`<a class="card" href="#chat-${a.slug}" id="card-${a.slug}">
+  <img src="avatars/${a.slug}.png" alt="${esc(a.ar)}" loading="lazy">
+  <b>${esc(a.ar)}</b><span>${esc(a.role)}</span><i>«${esc(a.line)}»</i></a>`).join('');
+
+// ---------- capabilities ----------
+let sample=null, db=null, user=null, mcp=null, uid=null, canWrite=null;
+(async()=>{ sample=await claude.use('sample').catch(()=>null); refreshRoomNote(); })();
+(async()=>{ user=await claude.use('user').catch(()=>null); if(user){ try{uid=await user.id();}catch(e){uid=null;} try{canWrite=await user.can('data.write');}catch(e){canWrite=null;} } })();
+(async()=>{ db=await claude.use('db').catch(()=>null); if(db){ loadVentures(); restoreChatIfOpen(); } })();
+(async()=>{ mcp=await claude.use('mcp').catch(()=>null); if(mcp){ try{ const l=await mcp.listTools('host:onestudio'); if(l.servers&&l.servers.length){ $('#readFlow').hidden=false; $('#flowHint').textContent='يعمل داخل تطبيق Claude على جهاز مالك الصفحة.'; } }catch(e){} } })();
+
+// ---------- ventures ----------
+let ventures=[], current=null; // current = {slug,name,profile}
+try{ const s=localStorage.getItem('dynamo.venture'); if(s) current=JSON.parse(s); }catch(e){}
+function setCurrent(v){ current=v; try{localStorage.setItem('dynamo.venture',JSON.stringify(v));}catch(e){} $('#ventureName').textContent=v?v.name:'لم يُحدَّد بعد'; renderVList(); }
+setCurrent(current);
+async function loadVentures(){
+  try{ const snap=await db.collection('ventures').orderBy('updatedAt','desc').limit(100).get(); ventures=snap.docs.map(d=>({slug:d.id,...d.data()})); }catch(e){ ventures=[]; }
+  renderVList();
+}
+function renderVList(){
+  const l=$('#vlist'); if(!l) return;
+  l.innerHTML=ventures.map(v=>`<button data-slug="${esc(v.slug)}" class="${current&&current.slug===v.slug?'on':''}">${esc(v.name||v.slug)}</button>`).join('')||'<span class="hint">لا مشاريع محفوظة بعد.</span>';
+  l.querySelectorAll('button').forEach(b=>b.onclick=()=>{ const v=ventures.find(x=>x.slug===b.dataset.slug); if(v){ fillForm(v); setCurrent({slug:v.slug,name:v.name,profile:v.profile||''}); } });
+}
+function fillForm(v){ $('#vName').value=v.name||''; $('#vSlug').value=v.slug||''; $('#vProfile').value=v.profile||''; }
+$('#ventureChip').onclick=()=>{ $('#drawerWrap').hidden=false; if(current) fillForm(current); $('#saveHint').textContent=db?'':'الحفظ يحتاج فتح الصفحة في claude.ai.'; };
+$('#closeDrawer').onclick=$('#scrim').onclick=()=>{ $('#drawerWrap').hidden=true; };
+$('#newVenture').onclick=()=>{ fillForm({}); $('#vName').focus(); };
+$('#saveVenture').onclick=async()=>{
+  const name=$('#vName').value.trim(); let slug=$('#vSlug').value.trim().toLowerCase().replace(/[^a-z0-9-]+/g,'-').replace(/^-+|-+$/g,'');
+  const profile=$('#vProfile').value.trim();
+  if(!name){ $('#saveHint').textContent='اكتب اسم المشروع.'; return; }
+  if(!slug) slug=name.replace(/\s+/g,'-').toLowerCase().replace(/[^a-z0-9-]+/g,'')||('v-'+Date.now().toString(36));
+  $('#vSlug').value=slug;
+  const v={slug,name,profile};
+  setCurrent(v);
+  if(db&&canWrite!==false){
+    try{ await db.doc('ventures/'+slug).set({name,profile,updatedAt:new Date().toISOString(),updatedBy:uid||null}); $('#saveHint').textContent='حُفظ.'; await loadVentures(); }
+    catch(e){ $('#saveHint').textContent='حُفظ على هذا الجهاز فقط (لا صلاحية كتابة مشتركة).'; }
+  } else { $('#saveHint').textContent='حُفظ على هذا الجهاز فقط.'; }
+  setTimeout(()=>{ $('#drawerWrap').hidden=true; },500);
+};
+$('#readFlow').onclick=async()=>{
+  const slug=$('#vSlug').value.trim(); if(!slug||!mcp){ $('#flowHint').textContent='اكتب معرّف الـ venture في Flow OS أولًا (مثل lead-ai).'; return; }
+  $('#flowHint').textContent='يقرأ…'; $('#readFlow').disabled=true;
+  const parts=[];
+  const tryCall=async(tool,input,label)=>{ try{ const r=await mcp.callTool('host:onestudio',tool,input); const p=r.payload; parts.push('## '+label+'\n'+(typeof p==='string'?p:(p&&p.text)?p.text:JSON.stringify(p,null,1).slice(0,6000))); }
+    catch(e){ parts.push('## '+label+': تعذّرت القراءة ('+(e&&e.code||'error')+')'); } };
+  await tryCall('venture_brief',{venture:slug,detail:true},'Flow OS: ملخص الـ venture');
+  await tryCall('get_lean_canvas',{venture:slug},'Flow OS: Lean Canvas');
+  await tryCall('list_stage_rules',{venture:slug},'Flow OS: قواعد المرحلة');
+  const t=$('#vProfile'); t.value=(t.value?t.value+'\n\n':'')+'# مقروء من Flow OS بتاريخ '+new Date().toISOString().slice(0,10)+'\n'+parts.join('\n\n');
+  $('#flowHint').textContent='أُضيف إلى ملف المشروع. راجعه واحفظ.'; $('#readFlow').disabled=false;
+};
+
+// ---------- routing ----------
+let agent=null, turns=[], ctl=null, busy=false;
+function route(){
+  const h=(location.hash||'#team').slice(1);
+  if(h.startsWith('chat-')){ const a=AGENTS.find(x=>x.slug===h.slice(5)); if(a){ openChat(a); return; } }
+  $('#viewTeam').hidden=false; $('#viewChat').hidden=true; agent=null;
+}
+window.addEventListener('hashchange',route);
+
+async function loadAgentMd(slug){ if(AGENT_MD[slug]) return AGENT_MD[slug]; try{ AGENT_MD[slug]=await (await fetch('agents/'+slug+'.md')).text(); }catch(e){ AGENT_MD[slug]=''; } return AGENT_MD[slug]; }
+function chatKey(){ return 'chat-'+((current&&current.slug)||'none')+'-'+agent.slug; }
+async function openChat(a){
+  agent=a; turns=[];
+  $('#viewTeam').hidden=true; $('#viewChat').hidden=false;
+  $('#pAvatar').src='avatars/'+a.slug+'.png'; $('#pName').textContent=a.ar; $('#pRole').textContent=a.role; $('#pLine').textContent='«'+a.line+'»';
+  $('#pDeliver').innerHTML=a.deliver.map(d=>`<li>${esc(d)}</li>`).join('');
+  $('#starters').innerHTML=a.starters.map(s=>`<button type="button">${esc(s)}</button>`).join('');
+  $('#starters').querySelectorAll('button').forEach(b=>b.onclick=()=>{ $('#box').value=b.textContent; send(); });
+  $('#thread').innerHTML='';
+  addSys(current?`يعمل على مشروع «${current.name}».`:'لم يُحدَّد مشروع بعد. حدّده من الزر في الأعلى، أو ابدأ الحديث وسيسألك.');
+  loadAgentMd(a.slug);
+  refreshRoomNote();
+  await restoreChatIfOpen();
+  $('#box').focus();
+}
+async function restoreChatIfOpen(){
+  if(!agent||!db||!uid) return;
+  try{ const d=await db.doc('data/users/'+uid+'/'+chatKey()).get(); if(d.exists){ const m=d.data().turns||[]; if(m.length){ turns=m; $('#thread').innerHTML=''; addSys('استُعيدت محادثتك السابقة.'); m.forEach(t=>addMsg(t.role==='user'?'me':'ai',t.content)); $('#starters').hidden=true; } } }catch(e){}
+}
+async function persist(){ if(!db||!uid||!agent) return; try{ await db.doc('data/users/'+uid+'/'+chatKey()).set({turns:turns.slice(-60),agent:agent.slug,venture:(current&&current.slug)||null,updatedAt:new Date().toISOString()}); }catch(e){} }
+function refreshRoomNote(){ const n=$('#roomNote'); if(sample===null&&agent){ n.hidden=false; n.className='note warn'; n.textContent='المحادثة تعمل داخل claude.ai فقط. افتح الرابط هناك حتى يردّ عليك '+agent.ar+'.'; } else { n.hidden=true; } }
+
+// ---------- rendering ----------
+function md(s){
+  s=esc(s);
+  s=s.replace(/```([\s\S]*?)```/g,(m,c)=>'<pre>'+c.replace(/^\w+\n/,'')+'</pre>');
+  s=s.replace(/`([^`\n]+)`/g,'<code>$1</code>');
+  s=s.replace(/\*\*([^*\n]+)\*\*/g,'<b>$1</b>');
+  s=s.replace(/^### (.*)$/gm,'<h3>$1</h3>').replace(/^## (.*)$/gm,'<h2>$1</h2>').replace(/^# (.*)$/gm,'<h1>$1</h1>');
+  // lists
+  s=s.replace(/((?:^|\n)(?:[-*•] .*(?:\n|$))+)/g,b=>'\n<ul>'+b.trim().split('\n').map(l=>'<li>'+l.replace(/^[-*•] /,'')+'</li>').join('')+'</ul>\n');
+  s=s.replace(/((?:^|\n)(?:\d+[.)] .*(?:\n|$))+)/g,b=>'\n<ol>'+b.trim().split('\n').map(l=>'<li>'+l.replace(/^\d+[.)] /,'')+'</li>').join('')+'</ol>\n');
+  // paragraphs
+  return s.split(/\n{2,}/).map(p=>/^<(ul|ol|pre|h\d)/.test(p.trim())?p:'<p>'+p.trim().replace(/\n/g,'<br>')+'</p>').join('');
+}
+function addSys(t){ const d=document.createElement('div'); d.className='sysnote'; d.textContent=t; $('#thread').appendChild(d); }
+function addMsg(kind,text){
+  const d=document.createElement('div'); d.className='msg '+kind;
+  if(kind==='ai') d.innerHTML=`<div class="who"><img src="avatars/${agent.slug}.png" alt="">${esc(agent.ar)}</div><div class="body">${md(text)}</div>`;
+  else d.textContent=text;
+  $('#thread').appendChild(d); $('#thread').scrollTop=$('#thread').scrollHeight; return d;
+}
+
+// ---------- prompting ----------
+function rules(){
+  const a=agent; const profile=(current&&current.profile)?current.profile:'';
+  return [
+`You are ${a.ar} (${a.slug}), ${a.en} of the Dynamo marketing team of One Studio. Below are the team conventions, your full definition, and the venture profile. Follow them.`,
+`HOW TO BEHAVE IN THIS CHAT:
+- Stay in character (see your Persona section): a senior colleague, warm and direct, one reason per choice, admit what you do not know.
+- Reply in the language of the person's last message. Arabic must be strong and natural (correct grammar and hamza, no translationese, no machine phrasing such as «ليس X بل Y», no slogans, no filler). English clean and plain. Gendered Arabic address follows how the person refers to themselves; when unsure use a neutral or formal form.
+- You cannot act outside this conversation: you cannot browse, publish, send, run code or read files. Never claim you did. When the work needs a file, code, a design export or a publication, produce the complete text here (copy, plan, table, code, brief) and say exactly what to do with it and who on the team continues.
+- Venture intake: if the venture profile below is missing or thin, do not lecture; ask at most five short, pre-filled questions (state your best guess and ask for a yes or a correction), then proceed. If the person cannot answer, state your assumption as [assumed] and continue.
+- For creative or strategic choices, show two genuinely different options first, each with one line on its bet, then commit to the one chosen.
+- Keep answers tight: short paragraphs, lists where parallel, tables for schedules. Lead with the answer. End substantial work with: ما تغيّر · ما تحقّقنا منه · ما بقي مفتوحًا.
+- Use markdown (headings, lists, bold, tables) sparingly and well.`,
+`=== TEAM CONVENTIONS (TEAM.md) ===\n${TEAM.slice(0,9000)}`,
+`=== YOUR DEFINITION (agents/${a.slug}.md) ===\n${(AGENT_MD[a.slug]||'').slice(0,16000)}`,
+`=== VENTURE PROFILE ===\n${profile?('Venture: '+current.name+' ('+current.slug+')\n'+profile.slice(0,14000)):'No venture profile yet. Run intake as described above.'}`
+  ].join('\n\n');
+}
+async function send(){
+  const box=$('#box'); const text=box.value.trim(); if(!text||busy) return;
+  if(!sample){ refreshRoomNote(); return; }
+  if(!AGENT_MD[agent.slug]) await loadAgentMd(agent.slug);
+  box.value=''; autosize(); $('#starters').hidden=true;
+  addMsg('me',text); turns.push({role:'user',content:text});
+  busy=true; $('#sendBtn').disabled=true; $('#stopBtn').hidden=false;
+  const bubble=addMsg('ai',''); const body=bubble.querySelector('.body'); body.innerHTML='<div class="thinking">'+esc(agent.ar)+' يفكّر</div>';
+  ctl=new AbortController();
+  const history=turns.slice(-24);
+  try{
+    const res=await sample([{role:'user',content:rules()},...history],{cache:false,signal:ctl.signal,onText:({text})=>{ body.innerHTML=md(text); $('#thread').scrollTop=$('#thread').scrollHeight; }});
+    turns.push({role:'assistant',content:res.text}); body.innerHTML=md(res.text);
+    if(res.truncated) addSys('انقطع الجواب لطوله. اطلب جزءًا أصغر.');
+    persist();
+  }catch(e){
+    const partial=e&&e.text; if(partial){ body.innerHTML=md(partial); turns.push({role:'assistant',content:partial}); }
+    else bubble.remove();
+    const code=e&&e.code;
+    if(code==='cancelled'){ if(!partial) turns.pop(); }
+    else if(code==='not_granted'||code==='sampling_disabled'){ addSys('لم يُسمح لهذه الصفحة باستخدام Claude من حسابك. يمكنك السماح من قائمة الصلاحيات في الأعلى.'); }
+    else if(code==='rate_limited'){ addSys('وصلت إلى حدّ الاستخدام مؤقتًا. حاول بعد قليل.'); }
+    else if(code==='prompt_too_large'){ addSys('المحادثة طالت. ابدأ محادثة جديدة أو اختصر ملف المشروع.'); }
+    else if(code!=='cancelled'){ addSys('تعذّر الردّ ('+(code||'خطأ')+'). حاول مرة أخرى.'); }
+  }finally{ busy=false; $('#sendBtn').disabled=false; $('#stopBtn').hidden=true; ctl=null; }
+}
+$('#composer').onsubmit=e=>{ e.preventDefault(); send(); };
+$('#stopBtn').onclick=()=>{ if(ctl) ctl.abort(); };
+const box=$('#box');
+function autosize(){ box.style.height='auto'; box.style.height=Math.min(200,box.scrollHeight)+'px'; }
+box.addEventListener('input',autosize);
+box.addEventListener('keydown',e=>{ if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){ e.preventDefault(); send(); } });
+
+route();
+})();
+</script>

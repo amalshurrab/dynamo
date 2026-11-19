@@ -48,6 +48,14 @@ dynamo/
 └── scripts/install.sh
 ```
 
+## الشخصيات · Characters
+
+`characters/`: ورقة شخصية لكل وكيل (`CHARACTERS.md`)، الأفاتارات `png/<slug>-512.png`، المصدر `svg/`، صفحة الفريق `dynamo-team-2400x1256.png`، والمولّد `build_characters.py` (يعيد رسم الـ 13 بأسلوب واحد: فلات بلا خطوط حبر، لوحة One Studio، لمسة برتقالية واحدة).
+
+## ملاحظة الاستيراد إلى Flow OS
+
+`discover_agent_repo` يحتاج أن يقرأ المستودع. وهو اليوم **خاص** تحت `amalshurrab/dynamo`، فالقراءة ترفض (`no_access`). الحلول: جعله عامًا، أو تثبيت تطبيق GitHub الخاص بالستوديو على الحساب، أو نقله إلى `onestudio-co`. قرار المالكة.
+
 ## قواعد الملكية · Ownership
 
 - المالكة والمراجِعة: Amal Shurrab. أي تعديل على وكيل يمرّ من هنا ثم يُزامَن إلى Flow OS.

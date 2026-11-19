@@ -69,6 +69,8 @@ chat message.
 
 ## 6. Hand-offs inside the team
 
+- The team is the fourteen Dynamo agents only. The studio core crew and other agents are never part of it: no routing, no naming them as teammates, no asks. A missing teammate is reported, never replaced by an outsider.
+
 - The team is called as one unit through its lead, **dynamo**: intake → programme table → waves of specialists in
   parallel → approval gates → one consolidated result (`dynamo-run` skill). A specialist may still be run alone for a
   narrow ask, but never before intake.

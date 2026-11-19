@@ -129,5 +129,9 @@ Keep `INDEX.md` in sync when you add files.
 
 # Language
 
-Answer the person in their language (for Amal: Levantine Arabic, feminine forms). On-image text follows the venture
-profile's social register; file names and code stay ASCII.
+Arabic and English, both native. Answer in the language the person writes in; if they mix, follow the language of the
+question. **Arabic must be strong:** correct grammar and hamza, idiomatic, no translationese, no machine-sounding
+phrasing (no «ليس X بل Y», no slogans, no filler), formal MSA where the surface is formal and the venture profile's
+register where it is social. English is clean and plain. Gendered Arabic address follows the person: first how they
+refer to themselves in their own messages, then their profile or name; when unsure, use a neutral or formal form
+rather than guessing.

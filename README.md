@@ -41,14 +41,14 @@
 **من Claude Code، كـ plugin (الطريقة الموصى بها لكل فريق One Studio):** أمران، مرة واحدة، على أي جهاز، ويعمل في كل مشاريعك:
 
 ```bash
-claude plugin marketplace add amalshurrab/dynamo
+claude plugin marketplace add onestudio-co/dynamo
 ```
 
 ```bash
 claude plugin install dynamo@dynamo
 ```
 
-أو من داخل جلسة Claude Code: `/plugin marketplace add amalshurrab/dynamo` ثم `/plugin install dynamo@dynamo`. (في Claude Code 2.1.292 وما بعد يكفي أمر واحد: `claude plugin install dynamo --marketplace amalshurrab/dynamo`.)
+أو من داخل جلسة Claude Code: `/plugin marketplace add onestudio-co/dynamo` ثم `/plugin install dynamo@dynamo`. (في Claude Code 2.1.292 وما بعد يكفي أمر واحد: `claude plugin install dynamo --marketplace onestudio-co/dynamo`.)
 بعدها افتح **جلسة جديدة** (الـ plugins تُحمَّل عند بدء الجلسة) واكتب:
 
 ```
@@ -60,12 +60,12 @@ claude plugin install dynamo@dynamo
 - **التحديث:** `claude plugin update dynamo@dynamo` (كل commit على `main` هو إصدار جديد؛ لا يلزم رقم نسخة). ثم `/reload-plugins` أو جلسة جديدة.
 - **لمستودع فريق** (حتى يُفعَّل تلقائيًا لكل من يفتحه): أضف إلى `.claude/settings.json` في المستودع:
   ```json
-  { "extraKnownMarketplaces": { "dynamo": { "source": { "source": "github", "repo": "amalshurrab/dynamo" } } },
+  { "extraKnownMarketplaces": { "dynamo": { "source": { "source": "github", "repo": "onestudio-co/dynamo" } } },
     "enabledPlugins": { "dynamo@dynamo": true } }
   ```
   وكل عضو يشغّل مرة واحدة `claude plugin install dynamo@dynamo --scope project`.
 - **ربط Flow OS** (اختياري): اربط MCP الستوديو في Claude Code حتى يقرأ الفريق مشروعك من Flow OS. بدونه يشتغل الفريق من المستودع والموقع وما تكتبه له.
-- **بديل بلا plugin:** `git clone https://github.com/amalshurrab/dynamo.git` ثم `dynamo/scripts/install.sh /path/to/venture` (ينسخ الوكلاء إلى `.claude/agents/`، المهارات إلى `.claude/skills/`، والمعرفة وقواعد الفريق إلى `.claude/dynamo/`). الأمر يصير `/dynamo` بلا بادئة. أعد تشغيله للتحديث.
+- **بديل بلا plugin:** `git clone https://github.com/onestudio-co/dynamo.git` ثم `dynamo/scripts/install.sh /path/to/venture` (ينسخ الوكلاء إلى `.claude/agents/`، المهارات إلى `.claude/skills/`، والمعرفة وقواعد الفريق إلى `.claude/dynamo/`). الأمر يصير `/dynamo` بلا بادئة. أعد تشغيله للتحديث.
 
 **من Flow OS** (بعد الترقية لـ«حيّ»): اكتب `@dynamo` في شات مذكور أو في شات خاص معه. لا تحتاج مفتاح Claude؛ الوكلاء يعملون على حساب Flow OS. يلزم أن تكون عضوًا داخليًا في Flow OS وعضوًا في الـ venture.
 

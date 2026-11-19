@@ -1,6 +1,6 @@
 #!/bin/zsh
 # Fallback installer: copies the Dynamo agents, skills, knowledge and team rules into one venture folder for Claude Code.
-# Prefer the plugin (auto-updates with every commit):  claude plugin marketplace add amalshurrab/dynamo && claude plugin install dynamo@dynamo
+# Prefer the plugin (auto-updates with every commit):  claude plugin marketplace add onestudio-co/dynamo && claude plugin install dynamo@dynamo
 # usage: scripts/install.sh /path/to/venture [agent ...]   (no agent names = the lead and all thirteen). Re-run to update.
 set -e
 HERE="$(cd "$(dirname "$0")/.." && pwd)"

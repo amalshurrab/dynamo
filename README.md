@@ -38,13 +38,17 @@
 
 ## كيف تستدعيه من Claude · Calling the team from Claude
 
-**من Claude Code، كـ plugin (الطريقة الموصى بها لكل فريق One Studio):** أمر واحد، مرة واحدة، على أي جهاز، ويعمل في كل مشاريعك:
+**من Claude Code، كـ plugin (الطريقة الموصى بها لكل فريق One Studio):** أمران، مرة واحدة، على أي جهاز، ويعمل في كل مشاريعك:
 
 ```bash
-claude plugin install dynamo --marketplace amalshurrab/dynamo
+claude plugin marketplace add amalshurrab/dynamo
 ```
 
-أو من داخل جلسة Claude Code: `/plugin marketplace add amalshurrab/dynamo` ثم `/plugin install dynamo@dynamo`.
+```bash
+claude plugin install dynamo@dynamo
+```
+
+أو من داخل جلسة Claude Code: `/plugin marketplace add amalshurrab/dynamo` ثم `/plugin install dynamo@dynamo`. (في Claude Code 2.1.292 وما بعد يكفي أمر واحد: `claude plugin install dynamo --marketplace amalshurrab/dynamo`.)
 بعدها افتح **جلسة جديدة** (الـ plugins تُحمَّل عند بدء الجلسة) واكتب:
 
 ```

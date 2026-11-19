@@ -1,0 +1,32 @@
+slug: naqqash
+prompts:
+  - id: decision_support-001
+    category: decision_support
+    consumer: for_human
+    text: |
+      الاسم صار «مذكور» ومعناه «اللي الذكاء الاصطناعي بيذكره». هاتي ثلاث اتجاهات شعار مختلفة فعلًا، كل واحدة مجرّبة
+      كأيقونة تطبيق وصورة دائرية وهيدر موقع، مع سطر واحد يشرح الفكرة.
+  - id: handoff_partner-001
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      اكتبي الموجز اللي بنعطيه لأداة توليد الصور للرمز فقط (بدون نص) بألوان الهوية، وبعدين خطوات التحويل إلى SVG
+      وضبط الاسم الكتابي بخط Cairo وInter يدويًا.
+  - id: structured_review-001
+    category: structured_review
+    consumer: for_human
+    text: |
+      هذه خمسة تصاميم من فريق السوشال. راجعيها مقابل نظام الهوية: الألوان بالأرقام، الخط، مكان الشعار، التأثيرات
+      الممنوعة. لكل تصميم: مطابق أو قائمة إصلاح بالـ token المخالف.
+  - id: handoff_partner-002
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      جهّزي حزمة الشعار الكاملة: SVG بكل الأشكال، PNG بالمقاسات، أفاتار دائري، بانر لينكدإن 2256×382، غلاف فيسبوك
+      1640×624، فافيكون وصورة OG، مع صفحة معاينة وملف ZIP.
+  - id: decision_support-002
+    category: decision_support
+    consumer: for_human
+    text: |
+      المالك قال الهوية «شكلها ذكاء اصطناعي». شخّصي السبب بالضبط (تدرّجات، توهّج، شرارات، تفاصيل كثيرة) واقترحي أقل
+      تعديل يحوّلها إلى هوية B2B SaaS هادئة بدون تغيير الفكرة.

@@ -1,0 +1,33 @@
+slug: bannaa
+prompts:
+  - id: handoff_partner-001
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      هذا مستودع الموقع (قراءة فقط) وملف النص المعتمد من محرّر وتقرير مُدقّق. اكتبي الجزء الأمامي من ملف التسليم
+      للمطوّر: خطوة 0 نشر main، جدول ترتيب التنفيذ، وأقسام F مع الكود الحالي والبديل وخطوة التحقق لكل قسم.
+  - id: handoff_partner-002
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      The register page ignores `?plan=` and has no consent checkbox. Write the section that shows the chosen plan,
+      captures consent with a timestamp, auto-starts checkout after verification, and stores first-touch UTM data
+      on the user, against the real repo files.
+  - id: decision_support-001
+    category: decision_support
+    consumer: for_human
+    text: |
+      نحتاج Meta Pixel وLinkedIn Insight وClarity مع GA4 الموجود. صمّمي دالة track واحدة وجدول أحداث القمع
+      (من أين يطلق كل حدث، وأي منها Key event في GA4)، وما الذي يحتاج قرارًا قانونيًا بخصوص الموافقة.
+  - id: structured_review-001
+    category: structured_review
+    consumer: for_human
+    text: |
+      المطوّر قال إن كل الأقسام صارت live. افحصي من الخارج قسمًا قسمًا (curl، DOM، شبكة المتصفح) وأعطيني جدول
+      الحالة: تم / جزئي / غير منفّذ، مع الدليل وسبب كل فجوة ومن يصلحها.
+  - id: handoff_partner-003
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      الفوتر بدون بريد ولا حسابات سوشال ولا روابط قانونية. اكتبي قسم الفوتر من ملف الهوية الواحد، مع Organization
+      sameAs من نفس المصدر، ومفاتيح اللغة للعربية والإنجليزية، وخطوة التحقق.

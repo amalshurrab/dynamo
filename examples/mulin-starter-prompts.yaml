@@ -1,0 +1,30 @@
+slug: mulin
+prompts:
+  - id: decision_support-001
+    category: decision_support
+    consumer: for_human
+    text: |
+      عندنا ميزانية 3,000 ريال شهريًا للإعلانات. اقرأ المشروع على Flow OS والموقع، وقدّم لي خطتين مختلفتين
+      مع الميزانية والنتائج المتوقعة كنطاقات واقعية، وقل لي شو تحتاج مني قبل البدء.
+  - id: structured_review-001
+    category: structured_review
+    consumer: for_human
+    text: |
+      افحص جاهزية الموقع والحسابات للإعلانات المدفوعة: البكسل، أحداث التحويل، صفحة الهبوط، الصفحات القانونية،
+      وصلاحيات الحسابات. أعطني قائمة ما يجب إصلاحه مع المسؤول والموعد.
+  - id: handoff_partner-001
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      الخطة (أ) معتمدة. جهّز الحملات على LinkedIn متوقفة، وأعطني جدول الإعداد الكامل للتحقق، وبريف الكرييتف للوّان وراوي.
+  - id: structured_review-002
+    category: structured_review
+    consumer: for_human
+    text: |
+      مرّ أسبوع على الحملة. اسحب النتائج، قارنها بالخطة، وحدّد تغييرًا واحدًا تقترحه للأسبوع القادم مع أثره المتوقع.
+      لا تطبّق شيئًا قبل موافقتي.
+  - id: decision_support-002
+    category: decision_support
+    consumer: for_human
+    text: |
+      المالك يسأل: هل نروّج منشور الأسبوع الأول بـ 200 ريال؟ أعطني رأيك بصراحة مع الأرقام المتوقعة، وماذا نقيس به النجاح.

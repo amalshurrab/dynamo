@@ -1,0 +1,31 @@
+slug: safeer
+prompts:
+  - id: handoff_partner-001
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      اقرأ المشروع والشرائح على Flow OS، وابنِ لي قائمة أول 60 شخصًا (20 لكل شريحة) مع المصدر وأساس التواصل والقناة،
+      كجدول أراجعه قبل أي رسالة.
+  - id: handoff_partner-002
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      اكتب لي نسختين مختلفتين فعلًا من أول رسالة لأصحاب وكالات التسويق على LinkedIn، كل واحدة أقل من 60 كلمة،
+      وقل لي على شو تراهن كل نسخة وشو حدّ نسبة الرد اللي نحكم فيه.
+  - id: structured_review-001
+    category: structured_review
+    consumer: for_human
+    text: |
+      هذه ملاحظات ثلاث مقابلات. اكتب لها ملاحظات أدلة بنفس اليوم: الحقائق، الاقتباسات، المفاجآت، وشو بتغيّر في تقييم الشريحة.
+  - id: decision_support-001
+    category: decision_support
+    consumer: for_human
+    text: |
+      مرّ أسبوع على الحملة المباشرة. أعطني تقرير البايبلاين: الأعداد بكل مرحلة لكل شريحة، نسبة الرد لكل نسخة،
+      المقابلات والفحوصات المجانية، وأفضل ثلاث خطوات للأسبوع القادم.
+  - id: handoff_partner-003
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      متجر قبل الفحص المجاني. افتح المهمة للفريق مع موعد التسليم، وجهّز لي سيناريو عرض النتيجة في 15 دقيقة
+      والخطوة التالية بصياغة باقة التجربة.

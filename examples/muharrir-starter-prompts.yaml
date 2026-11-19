@@ -1,0 +1,33 @@
+slug: muharrir
+prompts:
+  - id: handoff_partner-001
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      غيّرنا اسم المنتج أمس. هذا ملف هوية المشروع ورابط الموقع الحالي. اكتبي نص الموقع كاملًا قسمًا قسمًا
+      بنفس ترتيب الصفحة، مع قواعد عامة في الأعلى ومعرّف لكل نص، بحيث يطبّقه المطوّر بدون سؤال.
+  - id: structured_review-001
+    category: structured_review
+    consumer: for_human
+    text: |
+      قارني الموقع الحي بملف النص المعتمد: نسبة التطبيق، النصوص الناقصة، المخالفات (الممنوعات والاسم القديم)،
+      وسبب كل فرق (بناء قديم، تجاوز في قاعدة البيانات، قسم مخفي)، ومن يصلحه.
+  - id: structured_review-002
+    category: structured_review
+    consumer: for_human
+    text: |
+      راجعي مدوّنة الموقع (كل المقالات): ما يراه زاحف ChatGPT بدون JavaScript، الـ Schema، نصوص القالب،
+      عناوين جديدة لكل مقال في جدول، المواضيع المكررة، وخمس أفكار مقالات تجيب أسئلة المشتري قبل الشراء.
+  - id: regulatory_compliance-001
+    category: regulatory_compliance
+    consumer: for_human
+    text: |
+      المنتج تطبيق وليس شركة مسجّلة، الدفع عبر Stripe فقط، والسوق السعودية. اكتبي سياسة الخصوصية وشروط الاستخدام
+      وسياسة الاسترجاع بالعربية والإنجليزية وفق نظام حماية البيانات الشخصية ونظام التجارة الإلكترونية،
+      مع جدول حالات الاسترجاع وقائمة القرارات التي يحتاجها صاحب القرار.
+  - id: handoff_partner-002
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      اكتبي عنوان <title> ووصف meta (120–160 حرفًا) لكل صفحة عامة في الموقع، مع نص og:title وog:description،
+      وسلّميها لماهر بصيغة جاهزة للتركيب من السيرفر.

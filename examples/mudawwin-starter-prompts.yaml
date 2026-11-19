@@ -1,0 +1,32 @@
+slug: mudawwin
+prompts:
+  - id: handoff_partner-001
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      اكتبي تقرير اليوم لمديري بتاريخ 19 نوفمبر: من إنشاء صفحة فيسبوك إلى تسليم ملف المطوّر، بتفاصيل كثيرة لكل نقطة
+      وأرقام وملفات وطريقة التحقق، بهوية المشروع. وبعده نسخة صفحة واحدة بسطور قصيرة والشعار فقط.
+  - id: handoff_partner-002
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      هذه أسطر عمل اليوم. حوّليها إلى تحديث يومي على Flow OS: فصحى، checklist، سطر واحد لكل بند، بلا أسماء ولا إيموجي،
+      مع الوسوم. اعرضيه علي قبل النشر.
+  - id: handoff_partner-003
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      اكتبي كرت Big Shift لاجتماع الخميس (500 حرف كحد أقصى) عن تشغيل فريق الوكلاء على المشروع هذا الأسبوع، وقولي لي
+      متى يُقفل الأسبوع الحالي.
+  - id: structured_review-001
+    category: structured_review
+    consumer: for_human
+    text: |
+      قرّرنا تغيير اسم المنتج والشعار اللفظي. اعملي قائمة بكل الملفات والوثائق والعرض والـ Lean Canvas اللي تذكر الاسم
+      القديم، حدّثيها، وسلّميني قائمة التغييرات بالتواريخ.
+  - id: reference_lookup-001
+    category: reference_lookup
+    consumer: for_human
+    text: |
+      من تقرير جاهزية الموقع، افتحي للمطوّر مسألتين على Flow OS: SSR للصفحات العامة وتطبيق الهوية على الموقع، بمعايير
+      قبول ومالك وموعد 30 نوفمبر. اعرضي النص علي أولًا.

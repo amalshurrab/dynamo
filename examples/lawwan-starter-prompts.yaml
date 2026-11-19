@@ -1,0 +1,31 @@
+slug: lawwan
+prompts:
+  - id: handoff_partner-001
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      هذا ملف هوية المشروع وهذه كابشنات الأسبوع الأول (6 منشورات). صمّمي النظام كملف HTML واحد،
+      وصدّري post وstory وLinkedIn لكل منشور، مع معاينة الشبكة وملف PDF فيه كل تصميم بجانب كابشنه.
+  - id: handoff_partner-002
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      نحتاج كاروسيل من 7 شرائح عن «5 أسئلة يسألها المشتري» بنفس نظام الشهر، 1080×1350، مع ستوري تعلن عنه.
+  - id: structured_review-001
+    category: structured_review
+    consumer: for_human
+    text: |
+      هذه معاينة شبكة الحساب للشهر القادم. راجعيها كمديرة فنية: الإيقاع، تكرار القوالب، كثافة النص، مكان الشعار،
+      ومناطق الأمان. اقترحي أقل تعديل يصلح كل ملاحظة.
+  - id: handoff_partner-003
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      المشروع جديد وما عنده نظام تصميم للسوشال. اقترحي ثلاث اتجاهات مختلفة فعلًا كثلاثة منشورات حقيقية بمقاس البوست،
+      من ألوان وشعار الهوية فقط، بدون تأثيرات.
+  - id: structured_review-002
+    category: structured_review
+    consumer: for_human
+    text: |
+      المالك قال التصاميم «مليانة تفاصيل وما فيها نقطة تركيز وشكلها فريلانسر». أعيدي تصميم المنشور رقم 3 بأسلوب
+      B2B SaaS: عنوان واضح، عنصر منتج واحد، نقطة تركيز واحدة بلون الـ accent.

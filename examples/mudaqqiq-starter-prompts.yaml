@@ -1,0 +1,32 @@
+slug: mudaqqiq
+prompts:
+  - id: structured_review-001
+    category: structured_review
+    consumer: for_human
+    text: |
+      الموقع انتقل أمس إلى الدومين الجديد، وأول منشور يوجّه الزوار له يوم الأحد. افحصي كل الصفحات والروابط والصور
+      والسرعة والبريد والشهادة والنصوص مقابل الملف المعتمد، وسلّميني P0 قبل الأحد وP1 خلال الأسبوع، بمالك لكل بند.
+  - id: structured_review-002
+    category: structured_review
+    consumer: for_human
+    text: |
+      شو بيشوف ChatGPT وClaude وPerplexity لما يفتحوا الصفحة الرئيسية وصفحة الأسعار بدون JavaScript؟
+      اعطيني الدليل بأمر curl لكل صفحة، وحدّدي الصفحات اللي بتوصل فاضية.
+  - id: structured_review-003
+    category: structured_review
+    consumer: for_human
+    text: |
+      هذا ملف النص المعتمد وهذه قائمة الممنوعات. قارنيه بالموقع الحي وسلّميني جدول: المكان، الحالي، المطلوب،
+      ونسبة التطبيق.
+  - id: handoff_partner-001
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      المطوّر قال إنه أنهى بنود P0. أعيدي الفحص بنفس الأرقام المرجعية (الروابط الميتة، الصور بدون alt، مواضع الدومين
+      القديم، SSR) وقولي شو انتهى فعلًا وشو باقي، مع أمر التحقق لكل بند.
+  - id: structured_review-004
+    category: structured_review
+    consumer: for_human
+    text: |
+      قبل ما نبدأ إعلانات مدفوعة: افحصي التتبع فعليًا (GA4، Meta Pixel، LinkedIn، Clarity، أحداث التحويل، حفظ UTM)
+      ومسار الأسعار ← التسجيل ← الدفع، وقولي هل نقدر نوجّه زوار مدفوعين أو لا، ولماذا.

@@ -1,0 +1,34 @@
+slug: maher
+prompts:
+  - id: handoff_partner-001
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      الصفحة الرئيسية وصفحة الأسعار تصل لزواحف الذكاء الاصطناعي فارغة. اكتبي قسم SSR لكل الصفحات العامة في ملف
+      التسليم: الملفات، الكود الحالي والبديل، تشغيل الخدمة بشكل دائم مع fallback، وأوامر التحقق قبل وبعد.
+  - id: handoff_partner-002
+    category: handoff_partner
+    consumer: for_human
+    text: |
+      We moved from OLD.com to NEW.com. Write the domain-move pipeline: one-hop redirects with paths kept, robots.txt
+      and llms.txt from APP_URL, the root-cause fix for the old host inside stored articles plus a backfill command,
+      the webhook endpoint change, and the Search Console / Bing / OAuth hand-steps in order.
+  - id: decision_support-001
+    category: decision_support
+    consumer: for_human
+    text: |
+      ما عندنا صندوق بريد على الدومين، وMX على تحويل المسجّل، ولا DKIM ولا DMARC. اقترحي المزوّد والتسلسل
+      (صندوق، مزوّد إرسال، SPF واحد، DKIM، DMARC تدريجي) مع سجلات DNS الدقيقة وطريقة التحقق حتى 9/10 على mail-tester.
+  - id: structured_review-001
+    category: structured_review
+    consumer: for_human
+    text: |
+      Lighthouse mobile: home has no measurable LCP, an article's LCP is 12.4 s and assets have no Cache-Control.
+      Give the ordered fixes (nginx cache, hero animation, WebP srcset, lazy demo, chunks) each with the quoted
+      current code, the replacement and the re-measure command, and a before/after table template.
+  - id: structured_review-002
+    category: structured_review
+    consumer: for_human
+    text: |
+      المطوّر يقول إن SSR والبريد صاروا جاهزين. افحصي من الخارج: عدد الكلمات في HTML السيرفر لكل صفحة عامة،
+      وعدد H1، وسجلات MX وSPF وDKIM وDMARC بـ dig، وترويسات الكاش، وأعطيني جدول تم/جزئي/غير منفّذ مع السبب.

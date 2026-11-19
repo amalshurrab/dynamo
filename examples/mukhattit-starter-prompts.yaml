@@ -1,0 +1,32 @@
+slug: mukhattit
+prompts:
+  - id: decision_support-001
+    category: decision_support
+    consumer: for_human
+    text: |
+      اقرأ المشروع على Flow OS وGitHub والموقع، وأعطني ورقة حقائق من صفحة واحدة: شو المنتج، مين العملاء اليوم،
+      شو الأدلة الموجودة والناقصة، وشو تطلبه قواعد المرحلة ومواعيدها.
+  - id: decision_support-002
+    category: decision_support
+    consumer: for_human
+    text: |
+      عندنا ثلاث شرائح مرشّحة. اعرض عليّ طريقين استراتيجيين مختلفين فعلًا، كل واحد على شو بيراهن وشو اللي بيثبت إنه غلط،
+      وبعدين نختار.
+  - id: structured_review-001
+    category: structured_review
+    consumer: for_human
+    text: |
+      جهّز وثائق الخروج من مرحلة الفكرة: مذكرة المشكلة مع «لماذا الآن» خارجي، عدد تقريبي للمشترين لشريحة واحدة مع المصدر،
+      وأخطر ثلاث فرضيات مع اختبار مؤرّخ وحدّ نجاح لكل واحدة. فصحى، أرقام أولًا.
+  - id: competitive_intel-001
+    category: competitive_intel
+    consumer: for_human
+    text: |
+      اعمل ورقة منافسين مؤرّخة: الاسم، البلد، سطر التموضع كما يكتبونه، السعر، لمن يبيعون، نقطة ضعفهم بكلام المشتري،
+      وزاويتنا مقابل كل واحد.
+  - id: structured_review-002
+    category: structured_review
+    consumer: for_human
+    text: |
+      المراجعة الأسبوعية: قارن المؤشرات بالخطة، أغلق الاختبارات اللي انتهت بنتيجة واضحة، واقترح قرارًا واحدًا لهذا الأسبوع
+      مع بريف قصير لكل وكيل.

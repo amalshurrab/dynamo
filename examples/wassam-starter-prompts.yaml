@@ -1,0 +1,31 @@
+slug: wassam
+prompts:
+  - id: decision_support-001
+    category: decision_support
+    consumer: for_human
+    text: |
+      لازم نغيّر اسم المنتج لأن منافس مموّل اسمه شبه اسمنا. بدّي كلمة عربية واحدة تجمع «الظهور في البحث وإجابات
+      الذكاء الاصطناعي» مع «وكيل يكتب عنك». .com أولًا. هات جولة أولى بنمط لغوي واحد مع فحص النطاقات وWIPO.
+  - id: regulatory_compliance-001
+    category: regulatory_compliance
+    consumer: for_human
+    text: |
+      الفريق متحمّس لاسم «ظهور». قبل ما نحجز: افحصي كل كتابات اللاتينية الممكنة، النطاقات .com/.sa/.ai/.io، وWIPO في
+      الفئات 9 و35 و42، وقوليلي شو اللي ما بتغطيه WIPO.
+  - id: competitive_intel-001
+    category: competitive_intel
+    consumer: for_human
+    text: |
+      هذا اسم المنافس وهذه علامته. اشرحي بالضبط وين التشابه (اللفظ، الكتابة، الفئة، السوق) وهل التشابه كافي ليسبّب مشكلة،
+      وشو البدائل اللي تبعدنا عنه بأقل تغيير.
+  - id: decision_support-002
+    category: decision_support
+    consumer: for_human
+    text: |
+      قررنا الاسم. جهّزي ورقة الاسم النهائية: الكتابة العربية واللاتينية، نطق، النطاقات بأسعارها، نتائج السجلات بتاريخ
+      الفحص، المخاطر المفتوحة، وقائمة كل ما يجب إعادة تسميته.
+  - id: decision_support-003
+    category: decision_support
+    consumer: for_human
+    text: |
+      هذه قائمة 40 اسمًا عُرضت ورُفضت. أضيفي جولة جديدة بنمط «مفعول» فقط، 6 أسماء، بدون تكرار أي اسم سابق بأي كتابة.

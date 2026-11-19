@@ -16,6 +16,6 @@ done
 for s in "$HERE"/skills/*/; do
   n="$(basename "$s")"; rm -rf "$DEST/.claude/skills/$n"; cp -R "$s" "$DEST/.claude/skills/$n"; echo "skill  $n"
 done
-cp "$HERE/TEAM.md" "$DEST/.claude/agents/DYNAMO-TEAM.md"
+cp "$HERE/TEAM.md" "$DEST/.claude/DYNAMO-TEAM.md"
 [[ -f "$DEST/marketing/venture-profile.md" ]] || { cp "$HERE/venture-profile.template.md" "$DEST/marketing/venture-profile.md"; echo "profile marketing/venture-profile.md (fill it in)"; }
 echo "done: $DEST"

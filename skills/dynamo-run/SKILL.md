@@ -18,6 +18,9 @@ For each wave, dispatch every specialist of the wave in the SAME message:
 Agent(subagent_type="rawi",   prompt=BRIEF(rawi))
 Agent(subagent_type="lawwan", prompt=BRIEF(lawwan))
 ```
+Dispatch only the thirteen Dynamo specialists (`dynamo:<slug>` from the plugin, `<slug>` when installed in the folder).
+Never `general-purpose`, `Explore`, `Plan` or any agent outside the closed roster (TEAM.md). A specialist that is not
+available: say so in one line and do that part yourself.
 BRIEF = venture profile (path) + exact ask + earlier outputs (paths) + applicable rules (TEAM.md sections, profile bans)
 + "done" criteria + where to write (`marketing/<area>/`). Specialists write files; they never publish.
 

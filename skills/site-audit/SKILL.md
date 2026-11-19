@@ -79,7 +79,7 @@ numbers sheet, Search Console and Bing verified, bio links with UTM.
 Write `marketing/website/<venture>-launch-readiness.md` using `${CLAUDE_PLUGIN_ROOT}/knowledge/mudaqqiq/playbooks/report-template.md`:
 scope with counts, summary table (✅/⚠️/❌), P0 (before campaign date) / P1 (+1 week) / P2, each item with current
 state, required change, owner, and a `للتحقق` command; copy-compliance table; final `- [ ]` checklist. Hand code items to
-bannaa/maher, copy to muharrir, bugs to fahis, numbers to mudawwin. State explicitly what was not tested.
+bannaa/maher, copy to muharrir, application bugs to the venture's developer (an issue via mudawwin), numbers to mudawwin. State explicitly what was not tested.
 
 ## Re-audit
 Same denominators, same order, same commands. Report deltas (25 → 3 dead links) and close items only with the
